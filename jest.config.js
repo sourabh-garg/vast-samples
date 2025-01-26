@@ -1,14 +1,17 @@
 /* eslint-disable no-undef */
 module.exports = {
     rootDir: __dirname,
-    roots: ['<rootDir>'],
+    roots: ['<rootDir>/src'],
     reporters: ['default', 'jest-junit'],
     coverageDirectory: 'target',
     cache: true,
     verbose: true,
     cacheDirectory: '<rootDir>/tmp/jest',
     moduleFileExtensions: ['js', 'json', 'ts', 'tsx'],
-    testMatch: ['**/?(*.)+(test|spec).(js|jsx|ts|tsx)'],
+    testMatch: [
+        '**/__tests__/**/*.+(ts|tsx|js)',
+        '**/?(*.)+(spec|test).+(ts|tsx|js)'
+    ],
     testPathIgnorePatterns: [
         '/node_modules/',
         '/tmp/',
@@ -28,24 +31,10 @@ module.exports = {
     coveragePathIgnorePatterns: ['/node_modules/', '\\.json$', '/tests/', '/stories/', '/\\.storybook/'],
     transformIgnorePatterns: ['/node_modules/(?!(lodash-es|antd|[^/]+/es|rc-animate|rc-util)/).*'],
     transform: {
-        '\\.(ts|tsx)$': [
-            'ts-jest',
-            {
-                tsconfig: `${__dirname}/tsconfig.json`,
-                diagnostics: false,
-                isolatedModules: true,
-            },
-        ],
-        '/node_modules/((lodash-es|[^/]+/es)|rc-animate|rc-util)/.*': [
-            'ts-jest',
-            {
-                tsconfig: `${__dirname}/tsconfig.json`,
-                diagnostics: false,
-                isolatedModules: true,
-            },
-        ],
+        '^.+\\.(ts|tsx)$': 'ts-jest'
     },
     preset: 'ts-jest',
+    testEnvironment: 'node',
     globals: {
         'ts-jest': {
             tsConfig: `${__dirname}/tsconfig.json`,
