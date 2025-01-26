@@ -9,7 +9,10 @@
         "test": "tests",
         "src": "src"
     },
-    "files": ["lib", "src"],
+    "files": [
+        "lib",
+        "src"
+    ],
     "repository": {
         "type": "git",
         "url": "git+https://github.com/yourusername/vast-samples.git"
@@ -18,14 +21,19 @@
         "typecheck": "tsc --project tsconfig-typecheck.json",
         "lint": "eslint src --ext .ts,.tsx",
         "format": "prettier --write \"src/**/*.{ts,tsx}\"",
-        "clean": "rimraf dist",
+        "clean": "rimraf lib",
+        "prebuild": "npm run clean",
         "build": "tsc",
         "test": "jest",
         "prepare": "npm run clean && npm run build",
         "prepublishOnly": "npm test"
     },
     "license": "MIT",
-    "devDependencies": {},
+    "devDependencies": {
+        "rimraf": "^6.0.1",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.7.3"
+    },
     "jest-junit": {
         "suiteName": "core",
         "outputName": "./junit.xml",
