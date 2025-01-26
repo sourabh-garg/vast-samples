@@ -1,0 +1,62 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# IDE files
+.idea/
+.vscode/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+.env.local
+
+# Testing
+coverage/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Root directory
+.npmrc
+.npm
+.eslintcache
+yarn-debug.log*
+yarn-error.log*
+*.tgz
+.env
+.DS_Store
+log
+.vscode/settings.json
+.nyc_output
+*.log
+.idea/
+.tmp/
+.cache
+.docs
+.package
+.tmp
+*.cert
+*.key
+**\(failed\).png
+**__diff_output__**
+
+# Package directory
+lib/
+public/
+tmp/
+target/
+coverage
+All\ Specs/
+cypress/videos/
+codeDocumentation
+test-report.html
+mochawesome-report/
+testfile.ts

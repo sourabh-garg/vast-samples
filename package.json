@@ -1,0 +1,34 @@
+{
+    "name": "vast-samples",
+    "version": "1.0.0",
+    "author": "sourabh-garg",
+    "main": "lib/index.js",
+    "typings": "lib/index.d.ts",
+    "directories": {
+        "lib": "lib",
+        "test": "tests",
+        "src": "src"
+    },
+    "files": ["lib", "src"],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/yourusername/vast-samples.git"
+    },
+    "scripts": {
+        "typecheck": "tsc --project tsconfig-typecheck.json",
+        "lint": "eslint src --ext .ts,.tsx",
+        "format": "prettier --write \"src/**/*.{ts,tsx}\"",
+        "clean": "rimraf dist",
+        "build": "tsc",
+        "test": "jest",
+        "prepare": "npm run clean && npm run build",
+        "prepublishOnly": "npm test"
+    },
+    "license": "MIT",
+    "devDependencies": {},
+    "jest-junit": {
+        "suiteName": "core",
+        "outputName": "./junit.xml",
+        "outputDirectory": "target"
+    }
+}
